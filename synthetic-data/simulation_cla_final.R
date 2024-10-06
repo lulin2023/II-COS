@@ -610,8 +610,8 @@ p2 <- ggplot(data = data_ES,aes(x=Time,y=Value.mean,group=Method,shape=Method,co
                                    linetype = 1,
                                    color = NA)+
   geom_line(aes(linetype=Method,color=Method),linewidth=0.8)+
-  xlab("Time")+#横坐标名???
-  ylab(TeX("$\\tilde{C}_2(ES)$"))+#纵坐标名???
+  xlab("Time")+
+  ylab(TeX("$\\tilde{C}_2(ES)$"))+
   theme_bw() +scale_color_nejm(palette = c("default"), alpha = 1)+
   scale_fill_manual(values=c("#BC3C29FF","#0072B5FF","#E18727FF","#20854EFF","#7876B1FF"))+
   theme(axis.text = element_text(size = 16),
@@ -628,7 +628,7 @@ p2 <- p2 + geom_hline(aes(yintercept=Diversity_threshold), colour="black", linet
 p2
 
 
-plot_cla <- ggarrange(p1, p2, ncol=2, nrow=1, common.legend = TRUE, legend="bottom", # 添加标签
+plot_cla <- ggarrange(p1, p2, ncol=2, nrow=1, common.legend = TRUE, legend="bottom", 
                       font.label = list(size = 20, face = "bold"))
 pdf(file = "plot_cla.pdf",width = 10,height = 4) 
 plot_cla
